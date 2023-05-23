@@ -1,0 +1,459 @@
+/* RESET */
+
+*, 
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root {
+    --background-color: #4DB8EC;
+    --progress-window-color: #94D4F4;
+    --text-color: white;
+}
+
+.container {
+    max-width: 100%;
+    padding: 40px 20px;
+}
+
+.progress-window {
+    position: absolute;
+    width: 55%;
+    height: 40px;
+    background-color: var(--progress-window-color);
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    pointer-events: none;
+    -webkit-transform: translateY(-100px);
+        -ms-transform: translateY(-100px);
+            transform: translateY(-100px);
+}
+
+.app {
+    width: 70%;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--background-color);
+    padding: 55px 0 0 0;
+    overflow: hidden;
+}
+
+.head-block {
+    background-color: var(--background-color);
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 4px 30px 5px rgba(34, 60, 80, 0.32);
+            box-shadow: 0px 4px 30px 5px rgba(34, 60, 80, 0.32);
+    border-radius: 5px;
+    pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 0 0 20px;
+}
+
+.head-text {
+    color: var(--text-color);
+    font-size: 30px;
+}
+
+.container-time, .container-level, .container-points, .container-bonus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.window-modal-start {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hand {
+    width: 100px; height: 150px;
+    position: absolute;
+    top: 250px;
+    left: 25%;
+}
+
+.start-text {
+    color: var(--text-color);
+    font-size: 20px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 0 0 20px 0;
+}
+
+.container-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+    -webkit-transform: translateX(1000px);
+        -ms-transform: translateX(1000px);
+            transform: translateX(1000px);
+}
+
+.card {
+    width: 32%;
+    height: 90px;
+    margin: 0 5px 10px 0;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.card:hover {
+    -webkit-box-shadow: 4px 4px 20px 12px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 20px 12px rgba(34, 60, 80, 0.2);
+}
+
+.number {
+    font-size: 35px;
+    color: var(--text-color);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+}
+
+.blackout-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.3;
+}
+
+.countdown-time {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    bottom: 40%;
+    left: 40%;
+    color: red;
+    text-align: center;
+    font-size: 55px;
+    line-height: 180%;
+}
+
+.indicator-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+
+.bonus-indicator {
+    width: 10px; height: 10px;
+    outline: 1px solid black;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.bonus-next {
+    background-color: black;
+}
+
+.multiply {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hidden-card {
+    -webkit-transform: translateX(-1000px);
+        -ms-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    -webkit-transition: -webkit-transform ease-in-out .5s;
+    transition: -webkit-transform ease-in-out .5s;
+    -o-transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .5s, -webkit-transform ease-in-out .5s;
+} 
+
+.show-card {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: -webkit-transform ease-in-out .5s;
+    transition: -webkit-transform ease-in-out .5s;
+    -o-transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .5s, -webkit-transform ease-in-out .5s;
+}
+   
+.correct-answer {
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-image: url(../img/done.png);
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 40%;
+}
+
+.incorrect-answer {
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-image: url(../img/false.png);
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 40%;
+    -webkit-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    -webkit-animation: swing 1s ease-in-out infinite;
+            animation: swing 1s ease-in-out infinite;
+}
+
+.effect-card-one {
+    -webkit-transform: scale(.45);
+        -ms-transform: scale(.45);
+            transform: scale(.45);
+    -webkit-animation: pulse 1s ease-in-out infinite;
+            animation: pulse 1s ease-in-out infinite;
+}
+
+.effect-card-two {
+    -webkit-transform: rotate(-25deg);
+        -ms-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+    -webkit-animation: swing 1s ease-in-out infinite;
+            animation: swing 1s ease-in-out infinite;
+}
+
+.effect-card-three {
+    -webkit-animation-name: blinker;
+            animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+            animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+}
+
+@-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale(.45);
+              transform: scale(.45);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    to {
+      -webkit-transform: scale(.45);
+              transform: scale(.45);
+    }
+}
+
+@keyframes pulse {
+    from {
+      -webkit-transform: scale(.45);
+              transform: scale(.45);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    to {
+      -webkit-transform: scale(.45);
+              transform: scale(.45);
+    }
+}
+
+@-webkit-keyframes swing {
+    from {
+        -webkit-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+      }
+      50% {
+        -webkit-transform: rotate(25deg);
+                transform: rotate(25deg);
+      }
+      to {
+        -webkit-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+      }
+}
+
+@keyframes swing {
+    from {
+        -webkit-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+      }
+      50% {
+        -webkit-transform: rotate(25deg);
+                transform: rotate(25deg);
+      }
+      to {
+        -webkit-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+      }
+}
+
+@-webkit-keyframes blinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+@keyframes blinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+.resize-card-one {
+    width: 24%; height: 80px;
+}
+
+.resize-number-one {
+    font-size: 25px;
+}
+
+.resize-card-two {
+    width: 23%; height: 60px;
+}
+
+.resize-number-two {
+    font-size: 20px;
+}
+
+.resize-card-three {
+    width: 19%; height: 45px;
+}
+
+.resize-number-three {
+    font-size: 18px;
+}
+
+.game-over-head {
+    position: relative;
+    background-image: url(../img/gameOver.svg);
+    width: 100%;
+    height: 150px;
+    font-size: 40px;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 150px;
+}
+
+.game-over-head:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:rgba(0, 0, 0, .5);
+}    
+
+.result-list {
+    padding: 5% 20%;
+}
+
+.result-list > li {
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+.show-progress {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: -webkit-transform .2s ease-in-out;
+    -o-transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
