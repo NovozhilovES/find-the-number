@@ -25,7 +25,7 @@ export function gameOver() {
     resultList.append(correctAnswers);
     resultList.append(accuracy);
 
-    const accuracyResult = gameObject.correctAnswers*100/gameObject.totalAnswers;
+    const accuracyResult = Math.round(gameObject.correctAnswers*100/gameObject.totalAnswers);
 
     resultPoint.textContent = "Текущий результат:" + " " + gameObject.points;
     correctAnswers.textContent = 'Верных ответов' + " " + gameObject.correctAnswers + " " + 'из' + " " + gameObject.totalAnswers;

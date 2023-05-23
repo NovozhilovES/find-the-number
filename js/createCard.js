@@ -6,8 +6,10 @@ import { progressChange } from "./progressChange.js";
 let numberArr = [];
 
 export function createCards(container, level) {
+    const headFindNumber = document.querySelector('.head-find-number');
     setTimeout(() => {
        container.classList.add('show-card');
+       headFindNumber.classList.add('show-card');
     }, 1000);
     progressChange();
     numberArr = [];
@@ -49,7 +51,7 @@ export function createCards(container, level) {
 
 function cards(total, container, rangeA,rangeB) {
 
-    const headText = document.querySelector('.head-text');
+    const headTextNumber = document.querySelector('.head-find-number');
     for(let i = 0; i < total; i++) {
         const randomEffect = randomEffectCard();
         const cardElement = document.createElement('div');
@@ -73,8 +75,8 @@ function cards(total, container, rangeA,rangeB) {
         numberArr.push(number);
     }
     gameObject.numberFind = numberChoice(numberArr);
-    headText.textContent = 'Найдите указанное число:' + ' ' + gameObject.numberFind;
-    clickCard(gameObject.numberFind, container);
+    headTextNumber.textContent = ' ' + " " + gameObject.numberFind;
+    clickCard(gameObject.numberFind, container, headTextNumber);
 }
 
 

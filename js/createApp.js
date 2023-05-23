@@ -1,8 +1,6 @@
 import { createCards } from "./createCard.js";
 import { createdDemoCard, countdownStartGame } from "./demoCard.js";
 
-export let numberFind = 10;
-
 export let gameObject = {
     level: 1,
     numberFind: 10,
@@ -25,6 +23,8 @@ export function createDomView(demoStatus) {
     const progressWindow = document.createElement('div');
 
     const headText = document.createElement('p');
+
+    const headFindNumber = document.createElement('p');
 
     const containerTime = document.createElement('div');
     const containerLevel = document.createElement('div');
@@ -58,6 +58,7 @@ export function createDomView(demoStatus) {
     app.append(containerCard);
 
     headBlock.append(headText);
+    headBlock.append(headFindNumber);
 
     progressWindow.append(containerTime);
     progressWindow.append(containerLevel);
@@ -80,6 +81,7 @@ export function createDomView(demoStatus) {
     containerCard.classList.add('container-card');
     progressWindow.classList.add('progress-window');
     headText.classList.add('head-text');
+    headFindNumber.classList.add('head-find-number');
 
     containerTime.classList.add('container-time');
     containerLevel.classList.add('container-level');
@@ -106,13 +108,14 @@ export function createDomView(demoStatus) {
     pointsValue.textContent = gameObject.points;
     bonusMultiply.textContent = 'x' + gameObject.bonus;
 
-    headText.textContent = 'Найдите указанное число:' + " " +  gameObject.numberFind;
+    headText.textContent = 'Найдите указанное число:' + " ";
+    headFindNumber.textContent = ' ' + gameObject.numberFind;
 
-    demoStatus == true ? windowStartGame(app, containerCard) : createCards(containerCard, gameObject.level);
+    demoStatus == true ? windowStartGame(app, containerCard, headFindNumber) : createCards(containerCard, gameObject.level);
 
 }
 
-function windowStartGame(app, container) {
+function windowStartGame(app, container, headFindNumber) {
     const windowStart = document.createElement('div');
     const handHelps = document.createElement('img')
     const startGameText = document.createElement('p');
@@ -126,6 +129,7 @@ function windowStartGame(app, container) {
     startGameText.classList.add('start-text');
 
     container.style.transform = `translateX(0px)`;
+    headFindNumber.style.transform = `translateX(0px)`;
 
     handHelps.src = './img/hand.svg';
     startGameText.innerText = 'Нажмите на экран, \n что бы продолжить';
